@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<link href="https://fonts.googleapis.com/css?family=Gugi&amp;subset=korean" rel="stylesheet">
+
+ 	<title>partyTonight</title>
+ 	<meta charset = "utf-8">
+ 	<style>
+ 		body{background-color:black;}
+ 		h1{font-family: 'Gugi', cursive; font-weight:400;}
+ 		#wrap{width:1400px; height:1200px; position:fixed; border:20px solid black;
+ 				}
+ 		#btn{color:white; position:absolute; top:100px; left:300px;}
+ 		#laser{border-bottom:2px solid blue; width:1600px; height:20px; transform:rotate(45deg); 
+ 				animation: movingL 2s infinite;}
+ 		#dancer{width:1000px; height:700px; background: url("giphy (2).gif"); 
+ 				background-size:cover; position:absolute; top:250px; right:250px;
+ 				z-index:1;  border-radius:250px; opacity:0;}
+ 		#dancer2{width:900px; margin:auto; position: absolute; top:250px; right:20px; opacity:0;}
+ 		#contents{width:1200px; height:1050px; position:absolute; opacity:0;}
+ 			#nr{transform:scale(0.8); position:absolute; left:700px; bottom:750px;z-index:-1;}
+ 			#nr2{transform:scale(0.7); position: absolute; right:700px; bottom:200px;z-index:-1;}
+ 			#nr3{transform:scale(0.5); position:absolute; left:900px; top:300px;z-index:2; }
+ 			#nr4{position:absolute; z-index:-1; bottom:-70px; transform:scale(0.5);}
+ 			#nr5{position:absolute; bottom:150px; right:-70px; z-index:-1;
+ 				transform:scale(2);}
+ 			#nr7{transform:scale(0.5); position:absolute; bottom:5px; right:50px; z-index:2;}
+
+ 		@import url('https://fonts.googleapis.com/css?family=Gugi&subset=korean');
+
+ 		@keyframes movingL {
+ 			form{transform:rotate(45deg);}
+ 			to{transform:rotate(360deg);}
+ 		}
+ 	</style>
+ </head>
+ <body>
+
+ 	<div id = laser></div>
+ 	<div id = wrap>
+ 		<div id = dancer>
+ 			<div id =dancer2>
+ 				<img src ="Homero.gif" id =ho>
+ 		 		<img src ="2172C8505334F53D01.gif" id =dan1>
+ 				<img src ="2525614C5334F53F16.gif" id = dan2>
+ 				<img src = "146F55445033CD440E.gif" id = dan3>
+ 				<img src = "drake-transparent-hotline-bling-5.gif" id = dan4>
+ 			
+ 			</div>
+ 		</div>	
+ 			<img src ="mirrorball2.png" id = mirror>
+ 			<div id = btn><h1><-빠리 투나잇 </h1></div>
+ 		<div id = contents>
+ 			<img src = "giphy (1).gif" id =nr>
+ 			<img src = "giphy (4).gif" id =nr2>
+ 			<img src = "giphy (3).gif" id =nr3>
+ 			<img src = "giphy4.gif" id = nr4>
+ 			<img src = "252525E325252584252525B1252525E325252584252525B4.gif" id = nr5>
+ 			<img src = "giphy3.gif" id = nr6>
+ 			<img src = "giphy (5).gif" id = nr7>
+ 		</div>
+ 	</div>
+
+ <script type = "text/javascript">
+ 	
+ 	var z = document.getElementById("laser");
+		for(var i = 0; i<10; i++){
+			var q = z.cloneNode(true);
+			q.style.animationDuration = Math.random() + "s";
+			q.style.borderColor = randomColor();
+			document.body.appendChild(q)
+		}
+
+		function randomColor(){
+			var r = Math.random()*255;
+			var g = Math.random()*255;
+			var b = Math.random()*255;
+			var text = "rgb("+r+","+g+","+b+")";
+			console.log(text);
+			return text;
+		}
+		var toggle = "off";
+
+		mirror.onclick = function(){
+
+			if(toggle =="off"){
+			dancer.style.opacity = "100";
+			dancer2.style.opacity = "100";
+			contents.style.opacity = "100";
+			toggle="on";
+			}else{
+			dancer.style.opacity = "0";
+			dancer2.style.opacity = "0";
+			contents.style.opacity = "0";
+			toggle="off";
+			}
+			
+		}
+ </script> 
+ </body>
+ </html>
